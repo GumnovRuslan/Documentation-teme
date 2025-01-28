@@ -40,11 +40,15 @@ const NewPageModal = ({ newPageActive, setNewPageActive, isChild, id }: INewPage
     setTitle("");
   }, [newPageActive, setNewPageActive, setTitle]);
 
+  const handlerSubmit = useCallback((e: any) => {
+    e.preventDefault()
+  }, [])
+
   return (
     <ModalWrapperComponent handler={handleToggleClose} state={newPageActive} variant="">
-      <NewPageContentWrapper>
+      <NewPageContentWrapper onSubmit={handlerSubmit}>
         <ModalCloseComponent handler={handleToggleClose} state={newPageActive} />
-        <NewPageTitle>NewPage</NewPageTitle>
+        <NewPageTitle>New Page</NewPageTitle>
         <Input
           variant="padding"
           value={title || ""}

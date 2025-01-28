@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 
-const NewPageContentWrapper = styled.div`
+const NewPageContentWrapper = styled.form`
   position: relative;
   display: flex;
   align-items: center;

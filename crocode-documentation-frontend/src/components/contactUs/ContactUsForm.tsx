@@ -1,4 +1,19 @@
 import styled from "@emotion/styled";
+import { css } from "@emotion/react";
+
+interface IProps {
+  disabled: boolean;
+}
+
+const dynamicStyles = ({ disabled }: IProps) => css`
+  ${disabled
+    ? `
+    opacity: 0.5;
+    `
+    : `
+    opacity: 1;
+    `}
+`;
 
 const ContactUsForm = styled.form`
   display: flex;
@@ -6,6 +21,8 @@ const ContactUsForm = styled.form`
   justify-content: center;
   gap: 20px;
   width: 100%;
+  opacity: 0.5;
+  ${dynamicStyles}
 
   @media (min-width: 768.1px) {
     max-width: 800px;

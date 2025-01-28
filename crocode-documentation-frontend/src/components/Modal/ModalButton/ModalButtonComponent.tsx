@@ -17,7 +17,7 @@ const ModalButtonComponent = ({ name, title, id, handleToggleClose }: IPropsButt
     handleToggleClose(false);
   }, [id, title, createDocument, handleToggleClose]);
 
-  return <ModalButton onClick={handleCreateDocument}>{name}</ModalButton>;
+  return <ModalButton onClick={handleCreateDocument} >{name}</ModalButton>;
 };
 
 export default ModalButtonComponent;

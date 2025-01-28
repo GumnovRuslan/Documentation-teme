@@ -183,7 +183,7 @@ export const BackArrowIcon = ({size}: IPropsDefaultIcon) => {
   )
 }
 
-export const CrossIcon = ({size}: IPropsDefaultIcon) => {
+export const CrossIcon = ({size, color}: IPropsDefaultIcon) => {
   return (
     <svg
       width={size || 24}
@@ -194,7 +194,7 @@ export const CrossIcon = ({size}: IPropsDefaultIcon) => {
     >
       <path
         d="M18 18L6 6M18 6L6 18"
-        stroke="black"
+        stroke={color || 'black'}
         strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
