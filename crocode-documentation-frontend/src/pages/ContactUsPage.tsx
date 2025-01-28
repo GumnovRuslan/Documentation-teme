@@ -103,16 +103,14 @@ const ContactUsPage = (): JSX.Element => {
 
   const uploadToImgBB = async (file: any, url: string) => {
     try {
+      const cleanedBase64 = file.replace(/^data:image\/[a-z]+;base64,/, "");
       const formData = new FormData();
-      formData.append("image", file);
+      formData.append("image", cleanedBase64);
 
       const config = {
         method: 'POST',
         headers: {
-            'Accept': 'application/json',
-            'Access-Control-Allow-Origin': '*',
-            'Connection': 'keep-alive',
-            'Content-Type': 'application/json',
+          Accept: "application/json",
         },
         body: formData
     }
